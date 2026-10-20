@@ -14,16 +14,28 @@ planar domains and surfaces embedded in three-dimensional space.
 
 <table>
   <tr>
-    <td align="center">
-      <img src="pictures/THB_fun_ref_side.png" width="450" alt="Locally refined THB basis functions" />
-      <p><b>THB basis — three levels of refinement</b></p>
+    <td align="center" valign="top">
+      <img
+        src="pictures/THB_fun_ref_side.png"
+        height="260"
+        alt="Locally refined THB basis functions"
+      />
+      <p><b>THB basis: three levels of refinement</b></p>
     </td>
-    <td align="center">
-      <img src="pictures/scordelis.png" width="500" alt="Displacement visualization of a roof with a circular opening" />
+    <td align="center" valign="top">
+      <img
+        src="pictures/scordelis.png"
+        height="260"
+        alt="Displacement visualization of a roof with a circular opening"
+      />
       <p><b>Trimmed roof with a circular opening</b></p>
     </td>
-    <td align="center">
-      <img src="pictures/Gengar.png" width="370" alt="Trimmed geometry with local spline refinement" />
+    <td align="center" valign="top">
+      <img
+        src="pictures/Gengar.png"
+        height="260"
+        alt="Trimmed geometry with local spline refinement"
+      />
       <p><b>Trimmed and locally refined spline geometry</b></p>
     </td>
   </tr>
