@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "IGAeasy"
+version = "0.1.0"
+description = "A research-friendly isogeometric analysis framework supporting LR- and THB-splines."
+authors = [
+    { name="Christoph Hollweck", email="christoph.hollweck@gmail.com" }
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pyvista",
+    "splinepy",
+    "sympy",
+    "shapely",
+    "Rtree",
+    "triangle",
+    "tqdm"
+]
+
+[project.optional-dependencies]
+dev = ["build"]
+
+[tool.setuptools.packages.find]
+include = ["IGAeasy", "IGAeasy.*"]
+exclude = ["IGAeasy.investigation_setups*", "IGAeasy.tests*"]
+namespaces = false
+
+[tool.setuptools]
+include-package-data = false
+
+[project.urls]
+"Homepage" = "https://github.com/christophhollweck/IGAeasy"
+"Repository" = "https://github.com/christophhollweck/IGAeasy"

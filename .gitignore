@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+
+# IDE
+.idea/
+.vs/
+
+# Packaging
+IGAeasy.egg-info
+build/
+dist/
+
+# Windows / Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Local files
+activator.ps1
+/venv311
+
+# Private research and archived experiments (kept locally)
+/IGAeasy/investigation_setups/
+/.release-candidate*/
