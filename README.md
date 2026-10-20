@@ -12,32 +12,18 @@ and trimmed geometries.
 The computational core is designed for two-dimensional manifolds, including
 planar domains and surfaces embedded in three-dimensional space.
 
-<table style="width: 100%; table-layout: fixed;">
+<table>
   <tr>
-    <td style="text-align: center; vertical-align: top;">
-      <img
-        src="pictures/THB_fun_ref_side.png"
-        style="display: block; width: 100%; height: 260px; object-fit: contain;"
-        alt="Locally refined THB basis functions"
-      />
-      <p><b>THB basis: three levels of refinement</b></p>
+    <td align="center">
+      <img src="pictures/THB_fun_ref_side.png" width="450" alt="Locally refined THB basis functions" />
+      <p><b>THB basis — three levels of refinement</b></p>
     </td>
-
-    <td style="text-align: center; vertical-align: top;">
-      <img
-        src="pictures/scordelis.png"
-        style="display: block; width: 100%; height: 260px; object-fit: contain;"
-        alt="Displacement visualization of a roof with a circular opening"
-      />
+    <td align="center">
+      <img src="pictures/scordelis.png" width="500" alt="Displacement visualization of a roof with a circular opening" />
       <p><b>Trimmed roof with a circular opening</b></p>
     </td>
-
-    <td style="text-align: center; vertical-align: top;">
-      <img
-        src="pictures/Gengar.png"
-        style="display: block; width: 100%; height: 260px; object-fit: contain;"
-        alt="Trimmed geometry with local spline refinement"
-      />
+    <td align="center">
+      <img src="pictures/Gengar.png" width="370" alt="Trimmed geometry with local spline refinement" />
       <p><b>Trimmed and locally refined spline geometry</b></p>
     </td>
   </tr>
