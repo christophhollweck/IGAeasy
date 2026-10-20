@@ -191,7 +191,7 @@
   "IGAeasy/trimming/trim_elements.py": "0567bef68125177a8d6a993d7d16d915176a3ce9e8f8758106249c9060dbb5b0",
   "LICENSE": "c26cd70cb429221a1ce0111ef18c9e69372a6e8f5ed05a68b70af785e01931a4",
   "MANIFEST.in": "be04708b4b1b1e1daa38bd55e42abd96c2afc8f6f852e015ee6d549a010a388f",
-  "README.md": "aae5c293a1b5aeef8028a22a079756490e6152d45bca49b5f4b5572911abe10f",
+  "README.md": "7691e4274cec7467479cd155ac1a15c8c0b7c02b483c475edfeef679edd1e4e1",
   "docs/benchmark_references.md": "b0208eefebcbd58ee946eacfe1ba7f496292b61b571fcaadbddb13ad11ccfe7f",
   "docs/curved_natural_edges.md": "5224e9a04ed416d51e6725cd51d3c701d65aa6a3711d1d2d0a22cb2a470c4f13",
   "docs/hemisphere_kl_diagnostic.md": "e6f853b9b33ff4f2704a9f93c4ea080666b65b99cd42cb0a2f52b1903c2c4e05",
@@ -204,6 +204,7 @@
   "pictures/Gengar.png": "2fa851a45c4dba9f00f6ff1d965d17ef3f12e4fbb5d91e9dbcf96400161224f2",
   "pictures/THB_fun_ref_side.png": "5eef8f2cf0a698d0b7f318687f83f3e996a311069e7e338dcc0caaa4e31fbdb5",
   "pictures/igaeasy.png": "a0dc30bb034f57669e18fb3b373c373da04adc38e35580e922b52290bf9e3fe2",
+  "pictures/readme_gallery.png": "4db92e7423933f56415272722c5df6b017b195ae7fe0867bd7da2239b0d88400",
   "pictures/scordelis.png": "9c97df131ff7ea1e5b393ec3fc7f1c1af4876ae39dc737e12c68bd016cbc3edb",
   "pictures/trimmed_cooks_membrane.png": "e1e8150e355bab5abe0d5e0d80f635cb6f9bc97a4143acaeaef1d46f9add9da3",
   "pyproject.toml": "57296dd809d48f63034a1ab1ab8a2c27ddff9837652ec1d77f5c8d3c248ff38e",
@@ -289,5 +290,6 @@
   "tests/support/plate_kl_reference.py": "cdc6a7c9fb1594b542a3d7efb098901e722827e08e244e8ba878156ac249dd78",
   "tests/support/plate_rm5_reference.py": "f87518e29f69ad077cff18f5e0c4b9dadb19d8b27304d7b04c24b197be2afb76",
   "tests/support/scordelis_reference.py": "4b05a855f60ae369eab1b0f2ce1d62e141462c74c49369845e20c197a48cd8a4",
-  "tests/support/shell_cut_reference.py": "24e1562e296a8f526656a51be8cc623ee9c81d9c512c700d525c5caa0b26bd32"
+  "tests/support/shell_cut_reference.py": "24e1562e296a8f526656a51be8cc623ee9c81d9c512c700d525c5caa0b26bd32",
+  "tools/build_readme_gallery.py": "f99669aeb493d87fa845664b0cc4b66673a573c14726b97a0d8caddb436f1377"
 }

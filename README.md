@@ -12,22 +12,7 @@ and trimmed geometries.
 The computational core is designed for two-dimensional manifolds, including
 planar domains and surfaces embedded in three-dimensional space.
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="pictures/THB_fun_ref_side.png" width="450" alt="Locally refined THB basis functions" />
-      <p><b>THB basis — three levels of refinement</b></p>
-    </td>
-    <td align="center">
-      <img src="pictures/scordelis.png" width="500" alt="Displacement visualization of a roof with a circular opening" />
-      <p><b>Trimmed roof with a circular opening</b></p>
-    </td>
-    <td align="center">
-      <img src="pictures/Gengar.png" width="370" alt="Trimmed geometry with local spline refinement" />
-      <p><b>Trimmed and locally refined spline geometry</b></p>
-    </td>
-  </tr>
-</table>
+![THB basis with three refinement levels, a trimmed roof with a circular opening, and a trimmed locally refined spline geometry](pictures/readme_gallery.png)
 
 ## 💡 Features
 
