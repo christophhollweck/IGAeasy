@@ -1,83 +1,148 @@
 # IGAeasy
 
-**Isogeometric analysis in Python, with readable examples and verified structural benchmarks.**
+![IGAeasy overview](pictures/igaeasy.png)
 
-IGAeasy combines THB- and LR-spline discretizations with linear membranes and
-Reissner-Mindlin / Kirchhoff-Love shells. It supports trimmed domains, local
-refinement and strong or weak boundary conditions in the documented cases.
+**IGAeasy** is a modular and research-friendly Python framework for **Isogeometric Analysis (IGA)**.
 
-![Scordelis-Lo roof: computed RM5 displacement magnitude, deformation magnified 20 times](docs/images/scordelis_roof.png)
+It focuses on clear structure, readability and extensibility, with support for
+locally refined **LR- and THB-splines**. The current release provides linear
+membrane, Reissner-Mindlin shell and Kirchhoff-Love shell formulations on fitted
+and trimmed geometries.
 
-*Scordelis-Lo roof with RM5 shells. Colors show the computed displacement
-magnitude; deformation is magnified 20 times for visualization.*
+<table>
+  <tr>
+    <td align="center">
+      <img src="pictures/THB_fun_ref_side.png" width="450" alt="Locally refined THB basis functions" />
+      <p><b>THB basis — three levels of refinement</b></p>
+    </td>
+    <td align="center">
+      <img src="pictures/scordelis.png" width="500" alt="Displacement visualization of a roof with a circular opening" />
+      <p><b>Trimmed roof with a circular opening</b></p>
+    </td>
+    <td align="center">
+      <img src="pictures/Gengar.png" width="370" alt="Trimmed geometry with local spline refinement" />
+      <p><b>Trimmed and locally refined spline geometry</b></p>
+    </td>
+  </tr>
+</table>
 
-## What is included
+## 💡 Features
 
-- THB- and LR-spline spaces with shared basis evaluation utilities.
-- Linear plane-stress membranes; RM6, RM5, hierarchical RM5 and canonical KL shells.
-- Fitted and trimmed setups, including locally refined verification cases.
-- Strong Dirichlet conditions and documented penalty/Nitsche formulations.
-- Sparse assembly, linear solvers and preconditioning utilities.
-- Interactive displacement, stress and strain visualization with selectable overlays.
-- Standalone benchmarks and separate convergence/verification studies.
+- **Spline types:** LR-splines and truncated hierarchical B-splines.
+- **Structural elements:** Linear membranes, Reissner-Mindlin shells and Kirchhoff-Love shells.
+- **Trimming:** Analysis of geometries defined by trimming curves.
+- **Local refinement:** Refine selected regions while preserving the represented geometry.
+- **Boundary conditions:** Strong Dirichlet conditions and weak enforcement using penalty or Nitsche methods for the documented formulations.
+- **Postprocessing:** Interactive visualization of displacement, stress and strain fields.
+- **Verification:** Analytical solutions, manufactured solutions and established structural benchmarks.
+- **Modular design:** Separate components for geometry, discretization, materials, elements, assembly and solution.
 
-The initial release focuses on **linear static structural analysis**. Supporting
-utilities do not imply that every geometry, discretization or boundary-condition
-combination has been verified.
+## 📊 Examples
 
-## Install
+The example collection contains complete, readable setups for individual
+problems. Convergence studies are organized separately in the verification folders.
 
-Use Python 3.11 or newer:
+Examples include:
+
+- Simply supported plates.
+- The Scordelis-Lo roof.
+- An open hemisphere.
+- The Raasch hook.
+- Fitted and trimmed Cook's membrane.
+- A trimmed cantilever with an analytical reference solution.
+
+![Trimmed Cook membrane: background mesh and material boundary beside the computed displacement field](pictures/trimmed_cooks_membrane.png)
+
+*Trimmed Cook's membrane on a rectangular background mesh. The right panel shows
+the computed displacement magnitude; deformation is magnified 20 times.*
+
+The interactive viewer allows deformation, element boundaries and
+boundary-condition overlays to be shown or hidden. Available result fields
+can be selected within the same window.
+
+See the [example guide](IGAeasy/examples/README.md) for an overview.
+
+## 📦 Package Structure
+
+```text
+IGAeasy/
+├── assembler/               # Global matrix and vector assembly
+├── constraints/             # Strong/weak Dirichlet conditions and DOF constraints
+├── differential_geometry/   # Surface geometry and derivatives
+├── elements/                # Membrane and shell formulations
+├── error_norms/             # Error evaluation
+├── examples/                # Benchmarks and verification studies
+│   ├── shells/              # Shell examples
+│   └── membranes/           # Membrane examples
+├── geometry/                # Geometry creation and transformations
+├── loads/                   # Point, line and surface loads (Neumann conditions)
+├── manufactured_solutions/  # Reference fields for verification
+├── material/                # Material definitions
+├── numerical_integration/   # Quadrature and integration
+├── postprocessing/          # Result evaluation and visualization
+├── preconditioning/         # Linear-system preconditioners
+├── solver/                  # Linear-system solution
+├── splines/                 # LR- and THB-spline discretizations
+└── trimming/                # Trimmed-domain representation
+
+tests/                       # Automated regression tests
+docs/                        # Mathematical notes and validation records
+```
+
+## 🚀 Getting Started
+
+Use **Python 3.11 or newer**, preferably in a virtual environment.
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/christophhollweck/IGAeasy.git
 cd IGAeasy
+```
+
+Install the package and its dependencies:
+
+```bash
 python -m pip install -e .
 ```
 
-Select that Python environment in your IDE and open one of the standalone
-examples below. Each setup can be executed directly, including with the Python
-Run button in VS Code.
+Select this Python environment in your editor and open an example script.
+In VS Code, the standalone examples can be executed using the **Python Run button**.
 
-## Try an example
+For example, start with:
 
-| Example | Setup | Reference |
-|---|---|---|
-| Scordelis-Lo roof | [RM5 roof](IGAeasy/examples/shells/benchmarks/scordelis_roof/rm5.py) | Published numerical shell benchmark |
-| Simply supported plate | [RM5 plate](IGAeasy/examples/shells/benchmarks/simply_supported_plate/rm5.py) | Navier series |
-| Trimmed cantilever | [RM5 cantilever](IGAeasy/examples/shells/trimmed/flat_cantilever_rm5.py) | Analytical strip solution for the stated parameters |
-| Cook's membrane | [Plane-stress membrane](IGAeasy/examples/membranes/benchmarks/cooks_membrane.py) | Documented numerical reference interval |
+- [Scordelis-Lo roof](IGAeasy/examples/shells/benchmarks/scordelis_roof/rm5.py)
+- [Cook's membrane](IGAeasy/examples/membranes/benchmarks/cooks_membrane.py)
+- [Trimmed Cook's membrane](IGAeasy/examples/membranes/trimmed/cooks_membrane.py)
+- [Trimmed cantilever](IGAeasy/examples/shells/trimmed/flat_cantilever_rm5.py)
 
-See the [example guide](IGAeasy/examples/README.md) for the full collection.
-Benchmark folders contain individual setups; verification folders contain
-convergence studies.
+Dependencies are specified in [pyproject.toml](pyproject.toml).
 
-| Trimmed cantilever | Cook's membrane |
-|---|---|
-| ![Computed trimmed RM5 cantilever, deformation magnified twice](docs/images/trimmed_cantilever.png) | ![Computed Cook membrane displacement, deformation magnified 20 times](docs/images/cooks_membrane.png) |
+## 🧪 Verification
 
-*Actual computed displacement fields from the included examples. Displayed
-deformations are magnified 2 times and 20 times, respectively. These images
-are visualizations, not independent validation evidence.*
+The release passed **298 automated regression tests**. Verification combines
+analytical and manufactured solutions, spatial rotation checks, refinement
+studies and structural benchmarks.
 
-## Validation and limits
-
-The isolated structural export passed **298 regression tests**, with no failures,
-errors or skipped tests. All **44 installed example modules** import successfully,
-and the installed Cook benchmark lies in its documented reference interval.
+Run the tests with:
 
 ```bash
 python -m unittest discover -s tests -t .
 ```
 
-Read the [validation matrix](docs/shell_validation_matrix.md),
-[benchmark references](docs/benchmark_references.md) and
-[execution record](docs/release_execution.md) for the tested parameters and
-dependencies. Known limits include the documented KL hemisphere discrepancy,
-RM point-load behavior, fitted geometry approximation and extreme-cut conditioning.
-This is research software; passing the included tests is not a guarantee for
-arbitrary inputs or a replacement for independent engineering verification.
+The [validation matrix](docs/shell_validation_matrix.md) documents the tested
+configurations and known limitations. The current release focuses on
+**linear static membranes and shells**. The [execution record](docs/release_execution.md)
+contains the regression and installed-package checks.
 
-## License
+## 📌 License
 
-Copyright 2026 Christoph Hollweck. Released under the [MIT License](LICENSE).
+IGAeasy is released under the [MIT License](LICENSE).
+
+Copyright © 2026 Christoph Hollweck.
+
+## 🙌 Acknowledgements
+
+A special thanks to [qTipTip](https://github.com/qTipTip), whose public
+repositories and open-source contributions inspired the initial implementation
+of LR- and THB-splines in this project.
