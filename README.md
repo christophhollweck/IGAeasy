@@ -9,6 +9,9 @@ locally refined **LR- and THB-splines**. The current release provides linear
 membrane, Reissner-Mindlin shell and Kirchhoff-Love shell formulations on fitted
 and trimmed geometries.
 
+The computational core is designed for two-dimensional manifolds, including
+planar domains and surfaces embedded in three-dimensional space.
+
 <table>
   <tr>
     <td align="center">
@@ -134,6 +137,26 @@ The [validation matrix](docs/shell_validation_matrix.md) documents the tested
 configurations and known limitations. The current release focuses on
 **linear static membranes and shells**. The [execution record](docs/release_execution.md)
 contains the regression and installed-package checks.
+
+## 🚧 Ongoing Development
+
+IGAeasy is under active development. Additional capabilities will be included
+in public releases as their implementation and verification mature. Planned
+extensions include the shifted boundary method (SBM), heat conduction,
+eigenvalue problems, nonlinear formulations, multipatch coupling and
+third-medium contact.
+
+Features are released together with examples and validation evidence once
+they have been sufficiently tested for their documented scope.
+
+## 🤝 Contributing
+
+Contributions are welcome — from bug reports and documentation improvements
+to new examples, benchmarks and numerical methods. Feel free to open an issue
+to discuss an idea or submit a pull request.
+
+For larger extensions, please open an issue first so we can discuss the
+formulation, implementation and verification approach.
 
 ## 📌 License
 
